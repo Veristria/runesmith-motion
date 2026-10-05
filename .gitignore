@@ -1,0 +1,3 @@
+# Runesmith's home holds keys and records of one machine; never commit it.
+.runesmith/
+node_modules/

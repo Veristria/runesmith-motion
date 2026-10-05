@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <canvas id="canvas" width="1920" height="1080"></canvas>
+  <script type="module">
+    import { generateSvg } from './renderer.mjs';
+    const canvas = document.getElementById('canvas');
+    const stream = canvas.captureStream();
+    const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+    const audioDest = new MediaStreamAudioDestinationNode(new AudioContext());
+    // Recording logic including MediaStreamAudioDestinationNode...
+  </script>
+</body>
+</html>
