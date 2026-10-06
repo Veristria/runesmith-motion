@@ -4,6 +4,10 @@ A small motion-graphics program. You describe a clip in a JSON file (`.motion.js
 elements that move between keyframes. The program renders any moment of the clip to SVG, prints its state as JSON, or
 exports Lottie JSON and a folder of SVG frames. It runs on Node.js with no dependencies.
 
+**It is made to be used by agents.** There is no editor window: an AI agent (or a person) writes the clip as JSON, runs
+the command line, and reads back SVG frames, Lottie JSON or the state of every element as JSON. That is how the graphics
+of the Runesmith launch film were made.
+
 **It was built by [Runesmith](https://github.com/Veristria/runesmith), autonomously, by free AI models.** Runesmith is a system that plans software
 as milestones, has an AI model write the code, and checks every step against acceptance checks before the change is
 applied. Every line of the program's files in this repository (`motion.mjs` and the others listed under "What is here")
@@ -29,6 +33,10 @@ node motion.mjs sample.motion.json --at 1.5 --svg frame.svg    # draw the clip a
 node motion.mjs sample.motion.json --at 1.5 --json             # print the state of every element at 1.5 s
 ```
 
+`sample.motion.json` is an empty starting template: an 800x600 project at 30 fps with no elements yet, so these two
+commands draw an empty frame and print an empty list until elements are added. `GUIDE.md` shows the element types and how
+they move between keyframes.
+
 `GUIDE.md` describes the project file format (styles, easing, element types) and the command line. The code also accepts
 these options, which `GUIDE.md` does not describe yet:
 
@@ -46,7 +54,7 @@ these options, which `GUIDE.md` does not describe yet:
 - `paints.mjs`: gradient fills
 - `record.html`: the recorder page; a stub as built
 - `renderer.mjs`: meant to be the page's renderer; a stub as built
-- `sample.motion.json`: a minimal example project
+- `sample.motion.json`: an empty starting template (a project with no elements yet)
 - `scatter.mjs`: scattered elements that fade out
 - `RUNESMITH.md`: Runesmith's own log of what it did in this folder
 
